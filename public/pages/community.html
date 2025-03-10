@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщество - CardHive</title>
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <link rel="stylesheet" href="/public/styles/pages/community.css">
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <link rel="stylesheet" href="/styles/components/search.css">
+    <link rel="stylesheet" href="/styles/components/searchModal.css">
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+  </head>
+<body>
+  <header>
+    <div class="container">
+      <div class="avatar-menu">
+        <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+        <div class="header-center">
+          <div class="search-bar">
+            <input id="search-input" type="text" placeholder="Поиск манги...">
+            <button id="search-button">Поиск</button>
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+          <div class="currency" id="user-coins">100</div>
+          <div class="dropdown" id="dropdown">
+            <a href="/public/pages/index.html">Главная</a>
+            <a href="/public/pages/catalog.html">Каталог</a>
+            <a href="/public/pages/community.html">Сообщество</a>
+            <a href="/public/pages/profile.html">Профиль</a>
+            <a href="/public/pages/events.html">События</a>
+            <a href="/public/pages/store.html">Магазин</a>
+            <a href="#">Настройки</a>
+            <a href="#">Выйти</a>
+            <label class="theme-toggle">
+              Тема
+              <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="community-tabs">
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="forum">Форум</button>
+        <button class="tab-button" data-tab="recommendations">Рекомендации</button>
+        <button class="tab-button" data-tab="trade">Обмен</button>
+        <button class="tab-button" data-tab="auction">Аукцион</button>
+      </div>
+
+      <!-- Форум -->
+      <div class="tab-content active" id="forum">
+        <h2>📢 Форум</h2>
+        <form id="post-form">
+          <input type="text" id="post-title" placeholder="Заголовок поста" required>
+          <textarea id="post-content" placeholder="Напишите что-нибудь..." required></textarea>
+          <button type="submit" class="btn">Опубликовать</button>
+        </form>
+        <div class="posts" id="posts">
+          <!-- Посты будут добавлены через JS -->
+        </div>
+      </div>
+
+      <!-- Рекомендации -->
+      <div class="tab-content" id="recommendations">
+        <h2>✨ Лента рекомендаций</h2>
+        <div class="recommendations-feed">
+          <div class="recommendation-post">
+            <h3>Рекомендация</h3>
+            <p>Попробуйте собрать эту карту!</p>
+            <div id="rec-card-1"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Обмен -->
+      <div class="tab-content" id="trade">
+        <h2>🤝 Лента обменов</h2>
+        <div class="filters">
+          <select id="filter-author">
+            <option value="">Все авторы</option>
+            <option value="user1">User1</option>
+          </select>
+          <select id="filter-tag">
+            <option value="">Все теги</option>
+            <option value="rare">Редкие</option>
+          </select>
+          <button id="apply-filters" class="btn">Применить</button>
+        </div>
+        <div class="trade-grid" id="trade-grid">
+          <div class="card">
+            <img src="/public/assets/images/default-manga.jpg" alt="Card">
+            <div class="card-info">
+              <h3>Sample Card</h3>
+              <p>Редкость: C</p>
+              <button class="btn">Обменять</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Аукцион -->
+      <div class="tab-content" id="auction">
+        <h2>⚖️ Аукцион</h2>
+        <div class="auction-grid">
+          <div class="auction-item">
+            <img src="/assets/images/default-manga.jpg" alt="Auction Item">
+            <div class="auction-info">
+              <h3>Rare Card</h3>
+              <p>Текущая ставка: 100 монет</p>
+              <p>Осталось: <span id="auction-timer-1">05:00</span></p>
+              <button class="btn bid-btn">Сделать ставку</button>
+              <button class="btn buy-now">Купить сейчас (500 монет)</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 CardHive. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="/src/main.js"></script>
+  <script type="module" src="/src/pages/community.js"></script>
+  <script type="module" src="/src/components/cards.js"></script>
+  <script type="module" src="/src/components/modal.js"></script>
+  <script type="module" src="/src/components/search.js"></script>
+</body>
+</html>

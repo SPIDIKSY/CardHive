@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин - CardHive</title>
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <link rel="stylesheet" href="/public/styles/pages/store.css">
+    <link rel="stylesheet" href="/public/styles/components/dropdown.css">
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="avatar-menu">
+          <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+          <div class="header-center"></div>
+          <div class="avatar">
+            <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+            <div class="currency" id="user-coins">100</div>
+            <div class="dropdown" id="dropdown">
+              <a href="/public/pages/index.html">Главная</a>
+              <a href="/public/pages/catalog.html">Каталог</a>
+              <a href="/public/pages/community.html">Сообщество</a>
+              <a href="/public/pages/profile.html">Профиль</a>
+              <a href="/public/pages/events.html">События</a>
+              <a href="/public/pages/store.html">Магазин</a>
+              <a href="#">Настройки</a>
+              <a href="#">Выйти</a>
+              <label class="theme-toggle">
+                Тема
+                <div class="theme-switch">
+                  <input type="checkbox" id="theme-toggle">
+                  <span class="slider"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="store">
+        <h1>Магазин</h1>
+        <div class="packs-section">
+          <h2>📦 Паки</h2>
+          <div class="packs-grid" id="packs-grid"></div>
+        </div>
+        <div class="customization-section">
+          <h2>🎨 Кастомизация профиля</h2>
+          <div class="customization-grid" id="customization-grid"></div>
+          <div class="preview">
+            <h3>Предпросмотр</h3>
+            <div class="preview-container">
+              <div class="preview-avatar">
+                <img src="/public/assets/images/avatar.jpg" alt="Preview Avatar" id="preview-avatar">
+              </div>
+              <div class="preview-frame" id="preview-frame"></div>
+              <div class="preview-background" id="preview-background"></div>
+            </div>
+            <button class="btn" id="apply-customization" disabled>Применить</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 CardHive. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/store.js"></script>
+    <script type="module" src="/src/components/cards.js"></script>
+  </body>
+</html>

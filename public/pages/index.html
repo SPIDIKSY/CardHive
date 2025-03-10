@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardHive</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <link rel="stylesheet" href="/public/styles/pages/index.css">
+    <link rel="stylesheet" href="/public/styles/components/dropdown.css">
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <link rel="stylesheet" href="/public/styles/components/search.css">
+    <link rel="stylesheet" href="/public/styles/components/search-modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+  </head>
+<body>
+  <header>
+    <div class="container">
+      <div class="avatar-menu">
+        <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+        <div class="header-center">
+          <div class="search-bar">
+            <input type="text" id="home-search" placeholder="Поиск манги...">
+            <button id="search-button" style="display: none;">Поиск</button> <!-- Кнопка скрыта, так как не нужна -->
+          </div>
+        </div>
+        <div class="avatar">
+          <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+          <div class="currency" id="user-coins">100</div>
+          <div class="dropdown" id="dropdown">
+            <a href="/public/pages/index.html">Главная</a>
+            <a href="/public/pages/catalog.html">Каталог</a>
+            <a href="/public/pages/community.html">Сообщество</a>
+            <a href="/public/pages/profile.html">Профиль</a>
+            <a href="/public/pages/events.html">События</a>
+            <a href="/public/pages/store.html">Магазин</a>
+            <a href="#">Настройки</a>
+            <a href="#">Выйти</a>
+            <label class="theme-toggle">
+              Тема
+              <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Баннер -->
+    <section class="banner">
+      <h2>Хэллоуинская охота за картами</h2>
+      <p>До конца события: <span id="event-timer">30 дней</span></p>
+    </section>
+
+<!-- Популярные тайтлы -->
+<section class="showcase">
+  <h2>Популярные тайтлы</h2>
+  <div class="popular-section" id="popular-section"></div>
+</section>
+<!-- Топы -->
+<section class="tops-section">
+  <h2>🏆 Топы</h2>
+  <div class="tops-container">
+    <div class="top-block">
+      <h3>Манга</h3>
+      <ul id="top-manga"></ul>
+    </div>
+    <div class="top-block">
+      <h3>Карты</h3>
+      <ul id="top-cards"></ul>
+    </div>
+    <div class="top-block">
+      <h3>Коллекционеры</h3>
+      <ul id="top-collectors"></ul>
+    </div>
+  </div>
+</section>
+    <!-- Боевой пропуск -->
+    <section class="battle-pass">
+      <h2>🎯 Боевой пропуск</h2>
+      <div class="pass-container">
+        <div class="pass-progress">
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+            <span class="progress-text">Уровень 10 / 50 (2000/10000 XP)</span>
+          </div>
+          <button class="btn buy-premium">Купить премиум (50 монет)</button>
+        </div>
+        <div class="pass-levels">
+          <div class="level free" data-level="1"><span>1</span><p>10 монет</p></div>
+          <div class="level premium" data-level="1"><span>1</span><p>Редкая карта</p></div>
+          <div class="level free" data-level="5"><span>5</span><p>20 монет</p></div>
+          <div class="level premium" data-level="5"><span>5</span><p>Пак карт</p></div>
+        </div>
+        <div class="pass-tasks">
+          <h3>Задания</h3>
+          <ul>
+            <li class="daily">Собери 3 карты <button class="btn claim">Получить (50 XP)</button></li>
+            <li class="weekly">Соверши 5 обменов <button class="btn claim">Получить (100 XP)</button></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Карта дня -->
+    <section class="card-of-day">
+      <h2>🎴 Карта дня</h2>
+      <div id="daily-card"></div>
+      <p>До следующей: <span id="daily-timer">00:00:00</span></p>
+      <p>Шанс успеха: <span id="success-chance">10%</span></p>
+      <button id="claim-card" class="btn">Забрать!</button>
+      <button id="boost-chance" class="btn">Увеличить шанс (10 токенов)</button>
+    </section>
+
+    <!-- Для вас -->
+    <section class="for-you">
+      <h2>✨ Для вас</h2>
+      <div class="recommendations" id="recommendations"></div>
+    </section>
+
+    <!-- Манга месяца -->
+    <section class="manga-month-section">
+      <h2>📘 Манга месяца</h2>
+      <div class="manga-month" id="manga-month"></div>
+    </section>
+
+    <!-- Мини-игра -->
+    <section class="mini-game">
+      <h2>🕵️‍♂️ Коллекционная охота</h2>
+      <div class="hunt-area" id="hunt-area">
+        <div class="hidden-card" id="hidden-card"></div>
+      </div>
+    </section>
+
+    <!-- Быстрые ссылки -->
+    <section class="quick-links">
+      <h2>🔗 Быстрые ссылки</h2>
+      <div class="quick-links">
+        <div class="link-card"><h3>Каталог</h3><a href="/pages/catalog.html" class="btn">Перейти</a></div>
+        <div class="link-card"><h3>Сообщество</h3><a href="/pages/community.html" class="btn">Перейти</a></div>
+        <div class="link-card"><h3>Профиль</h3><a href="/pages/profile.html" class="btn">Перейти</a></div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 CardHive. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/pages/index.js"></script>
+  <script type="module" src="/src/components/cards.js"></script>
+  <script type="module" src="/src/components/search.js"></script>
+</body>
+</html>

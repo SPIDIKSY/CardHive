@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>События - CardHive</title>
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <link rel="stylesheet" href="/public/styles/pages/events.css">
+    <link rel="stylesheet" href="/public/styles/components/dropdown.css">
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="avatar-menu">
+          <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+          <div class="header-center"></div>
+          <div class="avatar">
+            <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+            <div class="currency" id="user-coins">100</div>
+            <div class="dropdown" id="dropdown">
+              <a href="/public/pages/index.html">Главная</a>
+              <a href="/public/pages/catalog.html">Каталог</a>
+              <a href="/public/pages/community.html">Сообщество</a>
+              <a href="/public/pages/profile.html">Профиль</a>
+              <a href="/public/pages/events.html">События</a>
+              <a href="/public/pages/store.html">Магазин</a>
+              <a href="#">Настройки</a>
+              <a href="#">Выйти</a>
+              <label class="theme-toggle">
+                Тема
+                <div class="theme-switch">
+                  <input type="checkbox" id="theme-toggle">
+                  <span class="slider"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="events">
+        <h1>События</h1>
+
+        <!-- Календарь ивентов -->
+        <div class="event-calendar">
+          <h2>Календарь событий</h2>
+          <div class="events-list" id="events-list">
+            <!-- События будут добавлены через JS -->
+          </div>
+        </div>
+
+        <!-- Боевой пропуск -->
+        <section class="battle-pass">
+          <h2>🎯 Боевой пропуск события</h2>
+          <div class="pass-container">
+            <div class="pass-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" id="event-progress-fill"></div>
+                <span class="progress-text" id="event-progress-text">Уровень 1 / 20 (0/500 XP)</span>
+              </div>
+              <button class="btn buy-premium" id="buy-event-premium">Купить премиум (50 монет)</button>
+            </div>
+            <div class="pass-levels" id="event-pass-levels">
+              <!-- Уровни будут добавлены через JS -->
+            </div>
+            <div class="pass-tasks">
+              <h3>Задания</h3>
+              <ul id="event-tasks">
+                <!-- Задания будут добавлены через JS -->
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Мини-игра: Коллекционная охота -->
+        <section class="mini-game">
+          <h2>🕵️‍♂️ Коллекционная охота</h2>
+          <p>Найди спрятанную карту! Подсказка: <span id="hunt-hint">Ищи в углу</span></p>
+          <div class="hunt-area" id="hunt-area">
+            <div class="hidden-card" id="hidden-card"></div>
+          </div>
+          <button class="btn" id="claim-hunt-reward">Забрать награду (5 токенов)</button>
+          <button class="btn" id="watch-ad">Смотреть рекламу за подсказку</button>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 CardHive. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/events.js"></script>
+    <script type="module" src="/src/components/cards.js"></script>
+  </body>
+</html>

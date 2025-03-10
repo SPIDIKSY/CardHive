@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль - CardHive</title>
+    <!-- Подключаем основные стили -->
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <!-- Стили для профиля -->
+    <link rel="stylesheet" href="/public/styles/pages/profile.css">
+    <!-- Стили для выпадающего меню -->
+    <link rel="stylesheet" href="/public/styles/components/dropdown.css">
+    <!-- Иконка сайта -->
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <!-- Стили для модальных окон -->
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <!-- Стили для поиска (исправлен путь) -->
+    <link rel="stylesheet" href="/public/styles/components/search.css">
+    <!-- Стили для модального окна поиска (исправлен путь) -->
+    <link rel="stylesheet" href="/public/styles/components/search-modal.css">
+    <!-- Подключаем библиотеку для уведомлений -->
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+    <!-- Подключаем Chart.js для статистики -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="avatar-menu">
+          <!-- Логотип и ссылка на главную -->
+          <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+          <div class="header-center"></div>
+          <div class="avatar">
+            <!-- Аватар пользователя -->
+            <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+            <!-- Отображение количества токенов -->
+            <div class="currency" id="user-coins">100</div>
+            <!-- Выпадающее меню -->
+            <div class="dropdown" id="dropdown">
+              <a href="/public/pages/index.html">Главная</a>
+              <a href="/public/pages/catalog.html">Каталог</a>
+              <a href="/public/pages/community.html">Сообщество</a>
+              <a href="/public/pages/profile.html">Профиль</a>
+              <a href="/public/pages/events.html">События</a>
+              <a href="/public/pages/store.html">Магазин</a>
+              <a href="#">Настройки</a>
+              <a href="#">Выйти</a>
+              <!-- Переключатель темы -->
+              <label class="theme-toggle">
+                Тема
+                <div class="theme-switch">
+                  <input type="checkbox" id="theme-toggle">
+                  <span class="slider"></span>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="profile-header">
+        <div class="profile-avatar">
+          <!-- Аватар пользователя в профиле -->
+          <img src="/public/assets/images/avatar.jpg" alt="Profile Avatar">
+        </div>
+        <div class="profile-info">
+          <h1>Пользователь</h1>
+          <div class="badges">
+            <div class="badge">★</div>
+            <div class="badge rare">✪</div>
+          </div>
+          <!-- Кнопка редактирования профиля -->
+          <button class="btn edit-profile">Редактировать профиль</button>
+        </div>
+      </section>
+
+      <section class="profile-tabs">
+        <div class="tab-buttons">
+          <button class="tab-button active" data-tab="collection">Коллекция</button>
+          <button class="tab-button" data-tab="stats">Статистика</button>
+          <button class="tab-button" data-tab="trade">Торговля</button>
+        </div>
+        <div class="tab-content active" id="collection">
+          <div class="showcase">
+            <h2>Ваша коллекция</h2>
+            <div class="showcase-list" id="showcase-list"></div>
+          </div>
+        </div>
+        <div class="tab-content" id="stats">
+          <h2>Статистика</h2>
+          <canvas id="collection-chart"></canvas>
+        </div>
+        <div class="tab-content" id="trade">
+          <h2>Торговля</h2>
+          <div class="trade-section">
+            <div class="wishlist">
+              <h3>Список желаний</h3>
+              <ul>
+                <li>Карта 1</li>
+                <li>Карта 2</li>
+              </ul>
+            </div>
+            <div class="referral">
+              <h3>Реферальная ссылка</h3>
+              <p>Приглашайте друзей и получайте бонусы!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2025 CardHive. Все права защищены.</p>
+      </div>
+    </footer>
+
+    <!-- Подключаем основные скрипты как модули -->
+    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/profile.js"></script>
+    <script type="module" src="/src/components/cards.js"></script>
+  </body>
+</html>
