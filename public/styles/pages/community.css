@@ -1,0 +1,149 @@
+.community-tabs {
+  padding: 20px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.tab-button.active {
+  background: var(--highlight-color);
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  color: var(--highlight-color);
+  margin-bottom: 20px;
+}
+
+#post-form {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--outline-color);
+  margin-bottom: 20px;
+}
+
+#post-form input,
+#post-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+#post-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--outline-color);
+}
+
+.recommendations-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recommendation-post {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--outline-color);
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters select {
+  padding: 10px;
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  flex-grow: 1;
+}
+
+.trade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--outline-color);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 10px;
+}
+
+.auction-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.auction-item {
+  background: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--outline-color);
+}
+
+.auction-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.auction-info {
+  padding: 10px;
+  text-align: center;
+}

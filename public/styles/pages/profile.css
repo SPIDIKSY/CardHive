@@ -1,0 +1,151 @@
+.profile-header {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+  border: 1px solid var(--outline-color);
+  background-size: cover;
+  background-position: center;
+  min-height: 150px; /* Фиксируем минимальную высоту шапки */
+}
+
+.profile-avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-position: center;
+}
+
+.profile-avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--outline-color);
+  transition: border-color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.profile-info h1 {
+  color: var(--highlight-color);
+  margin: 0; /* Убираем лишние отступы */
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.badge {
+  width: 30px;
+  height: 30px;
+  background: var(--outline-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.badge.rare {
+  background: var(--highlight-color);
+  color: #fff;
+}
+
+.profile-tabs {
+  padding: 20px 0;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.tab-button:hover {
+  transform: scale(1.05);
+}
+
+.tab-button.active {
+  background: var(--highlight-color);
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+h2 {
+  color: var(--highlight-color);
+  margin-bottom: 20px;
+}
+
+.showcase {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--outline-color);
+}
+
+.showcase-list {
+  display: grid; /* Используем grid для фиксированных размеров */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Фиксированная ширина карт */
+  gap: 20px;
+}
+
+.manga-card {
+  width: 150px; /* Фиксированный размер карты */
+  height: 250px; /* Фиксированная высота */
+  background: var(--bg-color);
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  overflow: hidden; /* Убираем вылезание контента */
+  transition: transform 0.3s ease; /* Плавное увеличение */
+}
+
+.manga-card:hover {
+  transform: scale(1.05);
+}
+
+.manga-card img {
+  width: 100%;
+  height: 180px; /* Фиксированная высота изображения */
+  object-fit: cover; /* Сохраняем пропорции */
+}
+
+.manga-card h3 {
+  font-size: 14px;
+  margin: 5px 10px;
+  color: var(--highlight-color);
+  white-space: nowrap; /* Убираем перенос текста */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Добавляем многоточие при обрезке */
+}
+
+.manga-card p {
+  font-size: 12px;
+  margin: 5px 10px;
+  color: var(--text-color);
+}

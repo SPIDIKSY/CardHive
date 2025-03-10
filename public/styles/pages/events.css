@@ -1,0 +1,162 @@
+.events {
+    padding: 20px 0;
+  }
+  
+  h1 {
+    color: var(--highlight-color);
+    margin-bottom: 20px;
+  }
+  
+  .event-calendar {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--outline-color);
+    margin-bottom: 40px;
+  }
+  
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .event-item {
+    background: var(--bg-color);
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--outline-color);
+  }
+  
+  .event-item h3 {
+    color: var(--highlight-color);
+    margin-bottom: 5px;
+  }
+  
+  .event-item p {
+    color: var(--text-color);
+  }
+  
+  .battle-pass {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--outline-color);
+  }
+  
+  .pass-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .pass-progress {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .progress-bar {
+    flex-grow: 1;
+    background: var(--outline-color);
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .progress-fill {
+    background: var(--highlight-color);
+    height: 100%;
+    width: 0%;
+    transition: width 0.5s;
+  }
+  
+  .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+  }
+  
+  .pass-levels {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .level {
+    background: var(--card-bg);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid var(--outline-color);
+  }
+  
+  .level.premium {
+    border-color: var(--highlight-color);
+  }
+  
+  .pass-tasks ul {
+    list-style: none;
+  }
+  
+  .pass-tasks li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--outline-color);
+  }
+  
+  .task-progress {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .task-progress-bar {
+    width: 100px;
+    height: 10px;
+    background: var(--outline-color);
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .task-progress-fill {
+    background: var(--highlight-color);
+    height: 100%;
+    border-radius: 5px;
+    transition: width 0.5s;
+  }
+  
+  .mini-game {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--outline-color);
+  }
+  
+  .hunt-area {
+    position: relative;
+    height: 300px;
+    background: url('/public/assets/images/default-manga.jpg') center/cover;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .hidden-card {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    background: var(--highlight-color);
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  #hunt-hint {
+    color: var(--highlight-color);
+  }
