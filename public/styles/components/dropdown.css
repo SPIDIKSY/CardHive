@@ -1,0 +1,86 @@
+.dropdown {
+  position: absolute;
+  top: 50px; /* Отступ от аватара */
+  right: 0;
+  background: var(--card-bg);
+  border: 1px solid var(--outline-color);
+  border-radius: 5px;
+  width: 200px; /* Фиксированная ширина */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Скрыто по умолчанию */
+  z-index: 1000;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Плавное появление */
+  transform: translateY(-10px); /* Начальная позиция для анимации */
+  opacity: 0;
+}
+
+.dropdown.active {
+  display: block;
+  transform: translateY(0); /* Плавное опускание */
+  opacity: 1;
+}
+
+.dropdown a,
+.dropdown label {
+  display: block;
+  padding: 10px 15px;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: background 0.3s ease; /* Плавное изменение фона */
+}
+
+.dropdown a:hover {
+  background: var(--highlight-color);
+  color: #fff;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.theme-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.theme-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--outline-color);
+  border-radius: 20px;
+  transition: background 0.4s ease; /* Плавная анимация переключателя */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.4s ease; /* Плавное движение */
+}
+
+input:checked + .slider {
+  background: var(--highlight-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
