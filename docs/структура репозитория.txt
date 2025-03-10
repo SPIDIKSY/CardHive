@@ -1,0 +1,50 @@
+CardHive/
+├── public/                    # Статические публичные файлы
+│   ├── assets/               # Ресурсы (изображения, шрифты и т.д.)
+│   │   ├── images/          # Изображения
+│   │   │   ├── avatar.jpg
+│   │   │   ├── default-manga.jpg
+│   │   │   └── logoW.png
+│   │   └── fonts/           # Шрифты (если добавите)
+│   ├── pages/               # HTML-страницы
+│   │   ├── index.html       # Главная страница
+│   │   ├── catalog.html     # Каталог
+│   │   ├── community.html   # Сообщество
+│   │   └── profile.html     # Профиль
+│   │   └── store.html
+│   │   └── events.html
+│   └── styles/              # Стили
+│       ├── components/      # Стили для компонентов
+│       │   ├── cards.css
+│       │   ├── dropdown.css
+│       │   ├── modal.css
+│       │   └── search-modal.css
+│       │   └── search.css # Муодульное окно Поиска
+│       └── pages/           # Стили для страниц
+│           ├── catalog.css
+│           ├── community.css
+│           ├── index.css
+│           ├── main.css     # Базовые стили
+│           └── profile.css
+│           └── events.css
+│           └── store.css
+├── src/                      # Исходный код (JavaScript)
+│   ├── components/          # Переиспользуемые компоненты
+│   │   ├── cards.js         # Логика карточек
+│   │   ├── modal.js         # Модальные окна
+│   │   └── search.js        # Поиск
+│   │   └── searchModal.js   # Муодульное окно Поиска
+│   ├── pages/               # Логика страниц
+│   │   ├── catalog.js
+│   │   ├── community.js
+│   │   ├── index.js
+│   │   └── profile.js
+│   │   └── events.js
+│   │   └── store.js
+│   ├── utils/               # Утилиты
+│   │   ├── api.js           # Функции для работы с API (выделим из текущих файлов)
+│   │   └── helpers.js       # Вспомогательные функции (например, escapeHtml)
+│   └── main.js              # Главный скрипт (инициализация)
+├── docs/                     # Документация
+├── config/                   # Конфигурации (если понадобится)
+│   └── constants.js         # Константы (API_URL, BASE_IMAGE_URL и т.д.)
