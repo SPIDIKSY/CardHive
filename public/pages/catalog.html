@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог - CardHive</title>
+    <link rel="stylesheet" href="/public/styles/pages/main.css">
+    <link rel="stylesheet" href="/public/styles/pages/catalog.css">
+    <link rel="stylesheet" href="/public/styles/components/dropdown.css">
+    <link rel="icon" href="/public/assets/images/logoW.png">
+    <link rel="stylesheet" href="/public/styles/components/modal.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/push.js@1.0.12/bin/push.min.js"></script>
+  </head>
+<body>
+  <header>
+    <div class="container">
+      <div class="avatar-menu">
+        <a href="/"><img src="/public/assets/images/logoW.png" alt="CardHive" class="logo-image"></a>
+        <div class="header-center">
+        </div>
+        <div class="avatar">
+          <img src="/public/assets/images/avatar.jpg" alt="User Avatar" id="avatar">
+          <div class="currency" id="user-coins">100</div>
+          <div class="dropdown" id="dropdown">
+            <a href="/public/pages/index.html">Главная</a>
+            <a href="/public/pages/catalog.html">Каталог</a>
+            <a href="/public/pages/community.html">Сообщество</a>
+            <a href="/public/pages/profile.html">Профиль</a>
+            <a href="/public/pages/events.html">События</a>
+            <a href="/public/pages/store.html">Магазин</a>
+            <a href="#">Настройки</a>
+            <a href="#">Выйти</a>
+            <label class="theme-toggle">
+              Тема
+              <div class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="catalog">
+    <h1>Каталог</h1>
+    <div class="filters">
+      <input type="text" id="search-input" placeholder="Поиск по названию...">
+      <select id="year">
+        <option value="">Все годы</option>
+        <!-- Годы будут добавлены через JS -->
+      </select>
+      <button id="search-button">Найти</button>
+      <button id="apply-filters">Применить фильтры</button>
+    </div>
+    <div class="catalog-grid" id="manga-grid"></div>
+    <button id="load-more">Загрузить ещё</button>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 CardHive. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="/src/pages/catalog.js"></script>
+  <script type="module" src="/src/components/modal.js"></script>
+  <script type="module" src="/src/components/cards.js"></script>
+</body>
+</html>
